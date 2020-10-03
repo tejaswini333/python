@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EmpList</title>
+</head>
+<body>
+        <center><h1>List Of Employees </h1></center>
+        {% if object_list %}
+    <table border="1">
+            <thead>
+                    <th>Emp Id</th>
+                    <th>Emp Name</th>
+                    <th>Emp Age</th>
+                    <th>Emp Addresss</th>
+                    <th>Emp Salary</th>
+            </thead>
+
+            <tbody>
+
+            {% for emp in object_list %}
+                    <tr>
+                        <td>{{emp.id}}</td>
+                        <td>{{emp.name}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>{{emp.address}}</td>
+                        <td>{{emp.salary}}</td>
+                    </tr>
+            {% endfor %}
+            </tbody>
+
+
+    </table>
+    {% else %}
+        {{msg}}     # no records -->
+    {% endif %}
+
+
+</body>
+</html>
